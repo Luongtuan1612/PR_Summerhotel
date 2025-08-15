@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "name": "Phòng Deluxe Hướng Biển",
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+    "price": 1500000,
+    "description": "Phòng rộng rãi với ban công riêng và tầm nhìn ra biển.",
+    "capacityAdults": 2,
+    "location": "Nha Trang"
+  },
+  {
+    "id": 2,
+    "name": "Phòng Suite Gia Đình",
+    "image": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353",
+    "price": 2500000,
+    "description": "Phòng rộng cho gia đình, có phòng khách và bếp nhỏ.",
+    "capacityAdults": 4,
+    "location": "Hà Nội"
+  },
+  {
+    "id": 3,
+    "name": "Phòng Tiêu Chuẩn",
+    "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
+    "price": 900000,
+    "description": "Phòng gọn gàng, phù hợp cho cặp đôi hoặc khách công tác.",
+    "capacityAdults": 2,
+    "location": "Hồ Chí Minh"
+  },
+  {
+    "id": 4,
+    "name": "Phòng Luxury Pool View",
+    "image": "https://images.unsplash.com/photo-1560185127-6ed189bf02f4",
+    "price": 1800000,
+    "description": "Hướng hồ bơi, nội thất sang trọng và giường king size.",
+    "capacityAdults": 2,
+    "location": "Đà Nẵng"
+  },
+  {
+    "id": 5,
+    "name": "Phòng Twin City View",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "price": 1200000,
+    "description": "Hai giường đơn, tầm nhìn ra thành phố về đêm.",
+    "capacityAdults": 2,
+    "location": "Nha Trang"
+  },
+  {
+    "id": 6,
+    "name": "Phòng Penthouse",
+    "image": "https://images.unsplash.com/photo-1600585154363-aac06cbf8f49",
+    "price": 3500000,
+    "description": "Tầng cao nhất, ban công lớn và phòng khách sang trọng.",
+    "capacityAdults": 4,
+    "location": "Hà Nội"
+  },
+  {
+    "id": 7,
+    "name": "Phòng VIP Sea View",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+    "price": 2800000,
+    "description": "Nội thất cao cấp, tầm nhìn toàn cảnh ra biển.",
+    "capacityAdults": 3,
+    "location": "Hồ Chí Minh"
+  },
+  {
+    "id": 8,
+    "name": "Phòng Studio",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+    "price": 1000000,
+    "description": "Thiết kế hiện đại, có bếp nhỏ và sofa.",
+    "capacityAdults": 2,
+    "location": "Đà Nẵng"
+  },
+  {
+    "id": 9,
+    "name": "Phòng Romantic Couple",
+    "image": "https://images.unsplash.com/photo-1600585154154-7126b04a7c11",
+    "price": 2000000,
+    "description": "Không gian ấm cúng, trang trí lãng mạn cho cặp đôi.",
+    "capacityAdults": 2,
+    "location": "Nha Trang"
+  },
+  {
+    "id": 10,
+    "name": "Phòng Standard Triple",
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd",
+    "price": 1400000,
+    "description": "Ba giường đơn, thích hợp cho nhóm bạn.",
+    "capacityAdults": 3,
+    "location": "Hà Nội"
+  },
+  {
+    "id": 11,
+    "name": "Phòng Business Executive",
+    "image": "https://images.unsplash.com/photo-1576675784441-e06fa2a1b69a",
+    "price": 2200000,
+    "description": "Không gian làm việc riêng, tiện nghi cao cấp.",
+    "capacityAdults": 2,
+    "location": "Hồ Chí Minh"
+  },
+  {
+    "id": 12,
+    "name": "Phòng Family Garden View",
+    "image": "https://images.unsplash.com/photo-1600585154254-3e6f0a9b274b",
+    "price": 1600000,
+    "description": "Hướng vườn xanh mát, phù hợp cho gia đình nhỏ.",
+    "capacityAdults": 2,
+    "location": "Đà Nẵng"
+  },
+  {
+    "id": 13,
+    "name": "Phòng Executive Sea View",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+    "price": 2600000,
+    "description": "Tầm nhìn biển tuyệt đẹp, phòng hiện đại và tiện nghi.",
+    "capacityAdults": 3,
+    "location": "Nha Trang"
+  },
+  {
+    "id": 14,
+    "name": "Phòng Deluxe City View",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "price": 1550000,
+    "description": "Phòng sang trọng với ban công nhìn thành phố.",
+    "capacityAdults": 2,
+    "location": "Hà Nội"
+  },
+  {
+    "id": 15,
+    "name": "Phòng Junior Suite",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+    "price": 1800000,
+    "description": "Phòng rộng, có khu vực tiếp khách riêng.",
+    "capacityAdults": 2,
+    "location": "Hồ Chí Minh"
+  },
+  {
+    "id": 16,
+    "name": "Phòng King View",
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+    "price": 1700000,
+    "description": "Phòng sang trọng với giường King và tầm nhìn đẹp.",
+    "capacityAdults": 2,
+    "location": "Đà Nẵng"
+  },
+  {
+    "id": 17,
+    "name": "Phòng Twin Deluxe",
+    "image": "https://images.unsplash.com/photo-1600585154363-aac06cbf8f49",
+    "price": 1350000,
+    "description": "Hai giường đơn, hiện đại và tiện nghi.",
+    "capacityAdults": 2,
+    "location": "Nha Trang"
+  },
+  {
+    "id": 18,
+    "name": "Phòng Sky Suite",
+    "image": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353",
+    "price": 3000000,
+    "description": "Tầng cao với view toàn cảnh thành phố.",
+    "capacityAdults": 4,
+    "location": "Hà Nội"
+  },
+  {
+    "id": 19,
+    "name": "Phòng Comfort Double",
+    "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
+    "price": 1100000,
+    "description": "Phòng gọn gàng, thoải mái cho 2 khách.",
+    "capacityAdults": 2,
+    "location": "Hồ Chí Minh"
+  },
+  {
+    "id": 20,
+    "name": "Phòng Ocean View Deluxe",
+    "image": "https://images.unsplash.com/photo-1560185127-6ed189bf02f4",
+    "price": 1900000,
+    "description": "Ban công hướng biển, nội thất sang trọng.",
+    "capacityAdults": 2,
+    "location": "Đà Nẵng"
+  },
+  {
+    "id": 21,
+    "name": "Phòng Garden Deluxe",
+    "image": "https://images.unsplash.com/photo-1600585154254-3e6f0a9b274b",
+    "price": 1600000,
+    "description": "Phòng rộng rãi, hướng vườn yên tĩnh.",
+    "capacityAdults": 2,
+    "location": "Nha Trang"
+  },
+  {
+    "id": 22,
+    "name": "Phòng Romantic Deluxe",
+    "image": "https://images.unsplash.com/photo-1600585154154-7126b04a7c11",
+    "price": 2100000,
+    "description": "Không gian lãng mạn, trang trí tinh tế.",
+    "capacityAdults": 2,
+    "location": "Hà Nội"
+  },
+  {
+    "id": 23,
+    "name": "Phòng Business Suite",
+    "image": "https://images.unsplash.com/photo-1576675784441-e06fa2a1b69a",
+    "price": 2300000,
+    "description": "Phòng làm việc tiện nghi, không gian rộng rãi.",
+    "capacityAdults": 2,
+    "location": "Hồ Chí Minh"
+  },
+  {
+    "id": 24,
+    "name": "Phòng Family Suite Deluxe",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "price": 2700000,
+    "description": "Phòng rộng rãi cho gia đình, tiện nghi hiện đại.",
+    "capacityAdults": 4,
+    "location": "Đà Nẵng"
+  }
+]
