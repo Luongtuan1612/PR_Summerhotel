@@ -10,6 +10,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import Locations from "./pages/Locations";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} /> 
+          <Route path="/locations" element={<Locations />} />
         </Routes>
       </main>
       {!isAuthPage && <Footer />}

@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -26,30 +27,41 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Đăng xuất có xác nhận
   const handleLogout = () => {
-    localStorage.removeItem("currentUser");
-    setUser(null);
-    navigate("/");
+    const confirmLogout = window.confirm("Bạn có chắc chắn muốn đăng xuất không?");
+    if (confirmLogout) {
+      localStorage.removeItem("currentUser");
+      setUser(null);
+      navigate("/");
+    }
   };
 
+  // Navbar items
   const navItems = [
     { name: "Trang chủ", path: "/" },
-    { name: "Phòng", path: "/rooms" },
+    { name: "Địa điểm", path: "/locations" },
     { name: "Liên hệ", path: "/contact" },
   ];
 
+  // Xử lý nền của navbar
+  let headerStyle = "bg-white shadow-md"; // mặc định
+  if ((pathname === "/" || pathname === "/locations") && !scrolled) {
+    headerStyle = "bg-transparent"; // home + địa điểm chưa scroll => trong suốt
+  }
+
+  const isTransparent = headerStyle === "bg-transparent";
+
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${headerStyle}`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link
           to="/"
           className={`flex items-center gap-2 text-2xl font-bold ${
-            scrolled ? "text-blue-600" : "text-white"
+            isTransparent ? "text-white" : "text-blue-600"
           }`}
         >
           <FaHotel className="text-3xl" />
@@ -65,10 +77,10 @@ export default function Header() {
               className={`relative text-lg font-medium transition-colors duration-300 ${
                 pathname === item.path
                   ? "text-blue-600"
-                  : scrolled
-                  ? "text-gray-800"
-                  : "text-white"
-              }`}
+                  : isTransparent
+                  ? "text-white"
+                  : "text-gray-800"
+              } hover:text-blue-500`}
             >
               {item.name}
               <motion.span
@@ -87,7 +99,7 @@ export default function Header() {
             <>
               <span
                 className={`${
-                  scrolled ? "text-gray-700" : "text-white"
+                  isTransparent ? "text-white" : "text-gray-700"
                 } whitespace-nowrap`}
               >
                 Xin chào, <strong>{user.name}</strong>
@@ -126,20 +138,16 @@ export default function Header() {
         {/* Nút menu mobile */}
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? (
-            <X size={28} className={scrolled ? "text-gray-800" : "text-white"} />
+            <X size={28} className={isTransparent ? "text-white" : "text-gray-800"} />
           ) : (
-            <Menu size={28} className={scrolled ? "text-gray-800" : "text-white"} />
+            <Menu size={28} className={isTransparent ? "text-white" : "text-gray-800"} />
           )}
         </button>
       </div>
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div
-          className={`md:hidden ${
-            scrolled ? "bg-white" : "bg-white"
-          } border-t border-gray-200`}
-        >
+        <div className="md:hidden bg-white border-t border-gray-200">
           <nav className="flex flex-col space-y-4 p-4">
             {navItems.map((item) => (
               <Link

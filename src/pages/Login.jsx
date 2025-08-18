@@ -6,6 +6,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false); // 👁 state bật/tắt mật khẩu
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -43,15 +44,27 @@ export default function Login() {
             required
             className="border border-gray-300 rounded-md px-4 py-2 w-full"
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="border border-gray-300 rounded-md px-4 py-2 w-full"
-          />
+
+          {/* Ô mật khẩu có mắt 👁 */}
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Mật khẩu"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded-md px-4 py-2 w-full"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+            >
+              {showPassword ? "🙈" : "👁"}
+            </button>
+          </div>
+
           <button
             type="submit"
             className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:scale-105 transition w-full"

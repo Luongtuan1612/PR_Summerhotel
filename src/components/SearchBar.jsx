@@ -1,7 +1,7 @@
 // src/components/SearchBar.jsx
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaChild, FaSearch } from "react-icons/fa";
+import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaSearch } from "react-icons/fa";
 
 export default function SearchBar({ onSearch }) {
   const today = new Date().toISOString().split("T")[0];
@@ -9,14 +9,13 @@ export default function SearchBar({ onSearch }) {
   tomorrow.setDate(tomorrow.getDate() + 1);
   const tomorrowStr = tomorrow.toISOString().split("T")[0];
 
-  const [location, setLocation] = useState("Hà Nội");
+  const [location, setLocation] = useState("Hà Nội"); // Mặc định là Hà Nội
   const [checkIn, setCheckIn] = useState(today);
   const [checkOut, setCheckOut] = useState(tomorrowStr);
   const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
 
   const handleSearchClick = () => {
-    onSearch({ location, checkIn, checkOut, adults, children });
+    onSearch({ location, checkIn, checkOut, adults });
   };
 
   return (
@@ -34,73 +33,58 @@ export default function SearchBar({ onSearch }) {
           <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="outline-none bg-transparent text-sm text-gray-800"
+            className="outline-none bg-transparent text-sm text-gray-800 w-full"
           >
             <option>Hà Nội</option>
-            <option>Hồ Chí Minh</option>
+            <option>Vinh</option>
             <option>Đà Nẵng</option>
-            <option>Nha Trang</option>
           </select>
         </div>
       </div>
 
-      {/* Ngày nhận - trả */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b md:border-b-0 md:border-r border-gray-300">
+      {/* Ngày nhận */}
+      <div className="flex items-center gap-2 px-4 py-3 border-b md:border-b-0 md:border-r border-gray-300 flex-1">
         <FaCalendarAlt className="text-gray-500" />
-        <div className="flex flex-col">
-          <label className="text-xs font-semibold text-gray-500">Ngày nhận - Trả phòng</label>
-          <div className="flex items-center gap-1 text-sm text-gray-800">
-            <input
-              type="date"
-              value={checkIn}
-              min={today}
-              onChange={(e) => setCheckIn(e.target.value)}
-              className="bg-transparent outline-none"
-            />
-            <span>-</span>
-            <input
-              type="date"
-              value={checkOut}
-              min={checkIn}
-              onChange={(e) => setCheckOut(e.target.value)}
-              className="bg-transparent outline-none"
-            />
-          </div>
+        <div className="flex flex-col flex-1">
+          <label className="text-xs font-semibold text-gray-500">Ngày nhận phòng</label>
+          <input
+            type="date"
+            value={checkIn}
+            min={today}
+            onChange={(e) => setCheckIn(e.target.value)}
+            className="bg-transparent outline-none text-sm text-gray-800 w-full"
+          />
         </div>
       </div>
 
-      {/* Người lớn */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b md:border-b-0 md:border-r border-gray-300">
+      {/* Ngày trả */}
+      <div className="flex items-center gap-2 px-4 py-3 border-b md:border-b-0 md:border-r border-gray-300 flex-1">
+        <FaCalendarAlt className="text-gray-500" />
+        <div className="flex flex-col flex-1">
+          <label className="text-xs font-semibold text-gray-500">Ngày trả phòng</label>
+          <input
+            type="date"
+            value={checkOut}
+            min={checkIn}
+            onChange={(e) => setCheckOut(e.target.value)}
+            className="bg-transparent outline-none text-sm text-gray-800 w-full"
+          />
+        </div>
+      </div>
+
+      {/* Số người */}
+      <div className="flex items-center gap-2 px-4 py-3 border-b md:border-b-0 md:border-r border-gray-300 flex-1">
         <FaUser className="text-gray-500" />
-        <div className="flex flex-col">
-          <label className="text-xs font-semibold text-gray-500">Người lớn</label>
+        <div className="flex flex-col flex-1">
+          <label className="text-xs font-semibold text-gray-500">Số người</label>
           <select
             value={adults}
             onChange={(e) => setAdults(Number(e.target.value))}
-            className="bg-transparent outline-none text-sm text-gray-800"
+            className="bg-transparent outline-none text-sm text-gray-800 w-full"
           >
             {[...Array(10)].map((_, i) => (
               <option key={i + 1} value={i + 1}>
                 {i + 1}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* Trẻ em */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b md:border-b-0 md:border-r border-gray-300">
-        <FaChild className="text-gray-500" />
-        <div className="flex flex-col">
-          <label className="text-xs font-semibold text-gray-500">Trẻ em</label>
-          <select
-            value={children}
-            onChange={(e) => setChildren(Number(e.target.value))}
-            className="bg-transparent outline-none text-sm text-gray-800"
-          >
-            {[...Array(10)].map((_, i) => (
-              <option key={i} value={i}>
-                {i}
               </option>
             ))}
           </select>

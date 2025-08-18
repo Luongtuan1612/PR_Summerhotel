@@ -1,9 +1,20 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import SearchBar from "../components/SearchBar";
 import RoomCard from "../components/RoomCard";
 import roomsData from "../../public/data/rooms.json";
 
 export default function Home() {
+  const [filteredRooms, setFilteredRooms] = useState([]);
+
+  // Xử lý tìm kiếm
+  const handleSearch = ({ location, adults }) => {
+    const result = roomsData.filter(
+      (room) => room.location === location && room.capacityAdults >= adults
+    );
+    setFilteredRooms(result);
+  };
+
   return (
     <div>
       {/* Banner */}
@@ -13,7 +24,8 @@ export default function Home() {
           alt="SummerHotel Banner"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Overlay đồng bộ */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
           <motion.h1
@@ -40,10 +52,24 @@ export default function Home() {
             transition={{ delay: 1, duration: 0.5 }}
             className="mt-10 w-full max-w-3xl"
           >
-            <SearchBar />
+            <SearchBar onSearch={handleSearch} />
           </motion.div>
         </div>
       </section>
+
+      {/* Kết quả tìm kiếm */}
+      {filteredRooms.length > 0 && (
+        <section className="max-w-7xl mx-auto px-6 py-16">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Kết quả tìm kiếm
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {filteredRooms.map((room) => (
+              <RoomCard key={room.id} room={room} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Phòng nổi bật */}
       <section className="max-w-7xl mx-auto px-6 py-16">

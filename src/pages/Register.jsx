@@ -7,6 +7,7 @@ export default function Register() {
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false); // 👁 state bật/tắt mật khẩu
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -16,16 +17,12 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Lấy danh sách user hiện tại
     const users = JSON.parse(localStorage.getItem("users")) || [];
-
-    // Check email đã tồn tại chưa
     if (users.some((u) => u.email === formData.email)) {
       alert("Email này đã được đăng ký!");
       return;
     }
 
-    // Lưu user mới
     const newUser = { ...formData };
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
@@ -57,15 +54,27 @@ export default function Register() {
             required
             className="border border-gray-300 rounded-md px-4 py-2 w-full"
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="border border-gray-300 rounded-md px-4 py-2 w-full"
-          />
+
+          {/* Ô mật khẩu có mắt 👁 */}
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Mật khẩu"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded-md px-4 py-2 w-full"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+            >
+              {showPassword ? "🙈" : "👁"}
+            </button>
+          </div>
+
           <button
             type="submit"
             className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:scale-105 transition w-full"

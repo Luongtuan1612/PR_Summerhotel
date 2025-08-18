@@ -6,7 +6,7 @@
     "price": 1500000,
     "description": "Phòng rộng rãi với ban công riêng và tầm nhìn ra biển.",
     "capacityAdults": 2,
-    "location": "Nha Trang"
+    "location": "Đà Nẵng"
   },
   {
     "id": 2,
@@ -24,7 +24,7 @@
     "price": 900000,
     "description": "Phòng gọn gàng, phù hợp cho cặp đôi hoặc khách công tác.",
     "capacityAdults": 2,
-    "location": "Hồ Chí Minh"
+    "location": "Vinh"
   },
   {
     "id": 4,
@@ -42,7 +42,7 @@
     "price": 1200000,
     "description": "Hai giường đơn, tầm nhìn ra thành phố về đêm.",
     "capacityAdults": 2,
-    "location": "Nha Trang"
+    "location": "Hà Nội"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "price": 3500000,
     "description": "Tầng cao nhất, ban công lớn và phòng khách sang trọng.",
     "capacityAdults": 4,
-    "location": "Hà Nội"
+    "location": "Vinh"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "price": 2800000,
     "description": "Nội thất cao cấp, tầm nhìn toàn cảnh ra biển.",
     "capacityAdults": 3,
-    "location": "Hồ Chí Minh"
+    "location": "Đà Nẵng"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "price": 1000000,
     "description": "Thiết kế hiện đại, có bếp nhỏ và sofa.",
     "capacityAdults": 2,
-    "location": "Đà Nẵng"
+    "location": "Hà Nội"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "price": 2000000,
     "description": "Không gian ấm cúng, trang trí lãng mạn cho cặp đôi.",
     "capacityAdults": 2,
-    "location": "Nha Trang"
+    "location": "Vinh"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "price": 1400000,
     "description": "Ba giường đơn, thích hợp cho nhóm bạn.",
     "capacityAdults": 3,
-    "location": "Hà Nội"
+    "location": "Đà Nẵng"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "price": 2200000,
     "description": "Không gian làm việc riêng, tiện nghi cao cấp.",
     "capacityAdults": 2,
-    "location": "Hồ Chí Minh"
+    "location": "Hà Nội"
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "price": 1600000,
     "description": "Hướng vườn xanh mát, phù hợp cho gia đình nhỏ.",
     "capacityAdults": 2,
-    "location": "Đà Nẵng"
+    "location": "Vinh"
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "price": 2600000,
     "description": "Tầm nhìn biển tuyệt đẹp, phòng hiện đại và tiện nghi.",
     "capacityAdults": 3,
-    "location": "Nha Trang"
+    "location": "Đà Nẵng"
   },
   {
     "id": 14,
@@ -132,7 +132,7 @@
     "price": 1800000,
     "description": "Phòng rộng, có khu vực tiếp khách riêng.",
     "capacityAdults": 2,
-    "location": "Hồ Chí Minh"
+    "location": "Vinh"
   },
   {
     "id": 16,
@@ -150,7 +150,7 @@
     "price": 1350000,
     "description": "Hai giường đơn, hiện đại và tiện nghi.",
     "capacityAdults": 2,
-    "location": "Nha Trang"
+    "location": "Hà Nội"
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "price": 3000000,
     "description": "Tầng cao với view toàn cảnh thành phố.",
     "capacityAdults": 4,
-    "location": "Hà Nội"
+    "location": "Vinh"
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
     "price": 1100000,
     "description": "Phòng gọn gàng, thoải mái cho 2 khách.",
     "capacityAdults": 2,
-    "location": "Hồ Chí Minh"
+    "location": "Đà Nẵng"
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
     "price": 1900000,
     "description": "Ban công hướng biển, nội thất sang trọng.",
     "capacityAdults": 2,
-    "location": "Đà Nẵng"
+    "location": "Hà Nội"
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "price": 1600000,
     "description": "Phòng rộng rãi, hướng vườn yên tĩnh.",
     "capacityAdults": 2,
-    "location": "Nha Trang"
+    "location": "Vinh"
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
     "price": 2100000,
     "description": "Không gian lãng mạn, trang trí tinh tế.",
     "capacityAdults": 2,
-    "location": "Hà Nội"
+    "location": "Đà Nẵng"
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "price": 2300000,
     "description": "Phòng làm việc tiện nghi, không gian rộng rãi.",
     "capacityAdults": 2,
-    "location": "Hồ Chí Minh"
+    "location": "Hà Nội"
   },
   {
     "id": 24,
@@ -213,6 +213,6 @@
     "price": 2700000,
     "description": "Phòng rộng rãi cho gia đình, tiện nghi hiện đại.",
     "capacityAdults": 4,
-    "location": "Đà Nẵng"
+    "location": "Vinh"
   }
 ]

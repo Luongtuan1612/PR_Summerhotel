@@ -1,49 +1,23 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import RoomCard from "../components/RoomCard";
 import roomsData from "../../public/data/rooms.json";
 
 export default function Rooms() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  // Lấy query từ URL
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const locationFilter = queryParams.get("location");
 
+  // Lọc theo location (nếu có)
   const filteredRooms = roomsData.filter((room) => {
-    const matchName = room.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchDesc = room.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchPrice =
-      (!minPrice || room.price >= parseInt(minPrice)) &&
-      (!maxPrice || room.price <= parseInt(maxPrice));
-    return (matchName || matchDesc) && matchPrice;
+    return !locationFilter || room.location === locationFilter;
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold mb-8 text-center">Danh sách phòng</h1>
-
-      {/* Bộ lọc */}
-      <div className="bg-white shadow-md rounded-lg p-4 mb-8 grid grid-cols-1 md:grid-cols-4 gap-4">
-        <input
-          type="text"
-          placeholder="Tìm kiếm phòng..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 col-span-2"
-        />
-        <input
-          type="number"
-          placeholder="Giá tối thiểu"
-          value={minPrice}
-          onChange={(e) => setMinPrice(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
-        />
-        <input
-          type="number"
-          placeholder="Giá tối đa"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
-        />
-      </div>
+    <div className="max-w-7xl mx-auto px-6 py-16 mt-[50px]">
+      <h1 className="text-3xl font-bold mb-10 text-center text-gray-800">
+        {locationFilter ? `Phòng tại ${locationFilter}` : "Danh sách phòng"}
+      </h1>
 
       {/* Danh sách phòng */}
       {filteredRooms.length > 0 ? (
@@ -53,7 +27,9 @@ export default function Rooms() {
           ))}
         </div>
       ) : (
-        <p className="text-center text-gray-500">Không tìm thấy phòng phù hợp.</p>
+        <div className="text-center text-gray-500 mt-10">
+          <p>Không tìm thấy phòng phù hợp.</p>
+        </div>
       )}
     </div>
   );
